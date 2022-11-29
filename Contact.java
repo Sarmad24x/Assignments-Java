@@ -2,6 +2,8 @@ package Assignment;
 
 import java.util.Scanner;
 
+import java.time.LocalDate;
+
 public class Contact {
     private String f_name,l_name,phone,email,dob,id;
     public Contact(String f,String l, String p,String e, String d, String i)
@@ -55,6 +57,12 @@ public class Contact {
     public void setId(String id) {
         this.id = id;
     }
+
+    public String toString()
+    {
+        return "First Name: "+f_name+"\n"+"Last Name: "+l_name+"\n"+"Phone Number: "+phone+"\n"+
+                "E-mail: "+email+"\n"+"Date of Birth: "+dob+"\n"+"ID: "+id+"\n";
+    }
 }
 class ContactList
 {
@@ -80,12 +88,9 @@ class ContactList
                 c.setDob(s.next());
                 System.out.println("Enter Your ID: ");
                 c.setId(s.next());
-                System.out.println("First Name: " + c.getF_name());
-                System.out.println("Last Name: " + c.getL_name());
-                System.out.println("Phone Number: " + c.getPhone());
-                System.out.println("E-mail: " + c.getEmail());
-                System.out.println("Date of Birth: " + c.getDob());
-                System.out.println("ID: " + c.getId());
+
+
+                System.out.println(c);
                 System.out.println("Do You Want To Another Number: (Yes/No)");
                 String choice_2=s.next();
                 if (choice_2.equals("yes"))
